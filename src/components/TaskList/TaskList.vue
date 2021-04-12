@@ -14,7 +14,6 @@
       <form @submit="checkForm" @submit.prevent="addTask">
         <input type="text" placeholder="Enter Task.." v-model="task">
       </form>
-
       <ul>
         <draggable v-model="tasks" group="people" @start="drag=true" @end="drag=false">
           <transition-group name="list">
@@ -33,11 +32,10 @@
           </transition-group>
         </draggable>
       </ul>
-
     </div>
   </div>
 </template>
 
-<script src="./Tasks.js"/>
+<script src="./TaskList.js"/>
 
-<style lang="scss" src="./Tasks.scss" scoped></style>
+<style lang="scss" src="./TaskList.scss" scoped></style>
