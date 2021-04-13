@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <button name="addList" onclick="add()">+</button>
     <TaskList/>
   </div>
 </template>
@@ -11,6 +12,11 @@ export default {
   name: 'App',
   components: {
     TaskList
+  },
+  methods: {
+    add() {
+      this.components.push(TaskList)
+    }
   }
 }
 </script>
@@ -32,5 +38,13 @@ body, html{
 }
 #app{
   width: 70%;
+}
+button[name=addList] {
+  border:none;
+  color: #DB7093;
+  background-color: #ffe4e1;
+  border-radius: 5px;
+  float: left;
+
 }
 </style>

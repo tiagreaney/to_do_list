@@ -2,13 +2,14 @@ import draggable from 'vuedraggable'
 import LabelEdit from 'label-edit'
 
 export default {
-    name: 'TaskList',
+    name: 'Task',
     data() {
         return {
             listName: {'name': 'To Do List', 'edit': false},
             checked: false,
             task: '',
-            tasks: [{'task': 'study', 'edit': false},],
+            tasks: [{'task': 'study', 'edit': false},
+            ],
         }
     },
     components: {
@@ -16,11 +17,6 @@ export default {
         draggable,
     },
     methods: {
-        checkForm() {
-            if (this.task !== '') {
-                return true;
-            }
-        },
         addTask() {
             if (this.task !== '') {
                 this.tasks.push({task: this.task, 'edit': false})
@@ -30,5 +26,10 @@ export default {
         remove(index) {
             this.tasks.splice(index, 1)
         },
-    }
+        checkForm() {
+            if (this.task !== '') {
+                return true;
+            }
+        },
+    },
 };

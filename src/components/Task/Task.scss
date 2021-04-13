@@ -130,7 +130,14 @@ button:hover[name=delete] {
   transform: rotate(45deg);
 }
 
+button[name=addList] {
+  border:none;
+  color: #DB7093;
+  background-color: #ffe4e1;
+  border-radius: 5px;
+  float: left;
 
+}
 
 input[name=editInput]{
   padding: 8px;
