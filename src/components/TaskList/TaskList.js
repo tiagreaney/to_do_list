@@ -1,5 +1,6 @@
 import draggable from 'vuedraggable'
 import LabelEdit from 'label-edit'
+import TaskListItem from '../TaskListItem/TaskListItem.vue'
 
 export default {
     name: 'TaskList',
@@ -7,28 +8,25 @@ export default {
         return {
             listName: {'name': 'To Do List', 'edit': false},
             checked: false,
-            task: '',
-            tasks: [{'task': 'study', 'edit': false},],
+        }
+    },
+    props: {
+        tasks: {
+            type: Array,
+            required: true,
         }
     },
     components: {
         LabelEdit,
         draggable,
+        TaskListItem,
     },
     methods: {
-        checkForm() {
-            if (this.task !== '') {
-                return true;
-            }
-        },
-        addTask() {
-            if (this.task !== '') {
-                this.tasks.push({task: this.task, 'edit': false})
-                this.task = '';
-            }
-        },
         remove(index) {
-            this.tasks.splice(index, 1)
+            this.$emit("remove", index)
         },
+        addTask(){
+            this.$emit("addTask")
+        }
     }
 };
