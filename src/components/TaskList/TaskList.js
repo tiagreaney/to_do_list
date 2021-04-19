@@ -6,7 +6,7 @@ export default {
     name: 'TaskList',
     data() {
         return {
-            listName: {'name': 'To Do List', 'edit': false},
+            listName: {listId: 1,'name': 'To Do List', entityType:'taskList', 'edit': false, tasks:[1,2]},
             checked: false,
         }
     },

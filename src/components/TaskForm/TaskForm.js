@@ -3,7 +3,7 @@ export default {
     data() {
         return {
             task: '',
-            listName: {'name': 'To Do List', 'edit': false},
+            listName: {id: 1, 'name': 'To Do List', 'edit': false, taskList:1, done: false, entityType: "task"},
         }
     },
     methods: {
