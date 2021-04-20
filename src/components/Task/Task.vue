@@ -21,5 +21,5 @@
 
 <script src="./Task.js"/>
 
-<style lang="scss" src="./Task.scss" scoped></style>
+<style lang="scss" src="Task.scss" scoped></style>
 
