@@ -15,5 +15,5 @@
     </ul>
   </div>
 </template>
-<script src="./TaskList.js"/>
-<style lang="scss" src="./TaskList.scss" scoped></style>
+<script src="ToDoList.js"/>
+<style lang="scss" src="ToDoList.scss" scoped></style>

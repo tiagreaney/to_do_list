@@ -11,12 +11,10 @@ const routes = [
     component: Home
   },
   {
-    path: '/to_do_list',
-    name: 'To Do List',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "to_do_list" */ '../views/ToDoListPage/ToDoListPage.vue')
+    path: '/task-lists/:id',
+    name: 'Task List',
+    component: () => import('../views/TaskList/TaskList.vue'),
+    props: true,
   }
 ]
 

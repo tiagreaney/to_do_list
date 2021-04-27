@@ -12,5 +12,5 @@
     <button @click="remove">x</button>
   </li>
 </template>
-<script src="./TaskListItem.js"></script>
-<style lang="scss" src="./TaskListItem.scss" scoped></style>
+<script src="ToDoListItem.js"></script>
+<style lang="scss" src="ToDoList.scss" scoped></style>
