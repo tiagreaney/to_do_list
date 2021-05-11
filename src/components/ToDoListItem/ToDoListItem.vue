@@ -1,16 +1,16 @@
 <template>
   <li>
-    <div class="container" v-show="!data.edit">
-      <label @dblclick="data.edit = true"> {{ data.task }}
-        <input type="checkbox" v-model="data.index" :key="data.index">
-        <span class="checkmark"></span>
+    <div class = "container" v-show = "!edit">
+      <label @dblclick = "edit = true"> {{ task.name }}
+        <input type = "checkbox" v-model = "task.index" :key = "task.index">
+        <span class = "checkmark"></span>
       </label>
     </div>
-    <input name="editInput" v-show="data.edit" v-model="data.task"
-           v-on:blur="data.edit=false; $emit('update')"
-           @keyup.enter="data.edit=false; $emit('update')">
-    <button @click="remove">x</button>
+    <input name = "editInput" v-show = "edit" v-model = "task.name"
+           v-on:blur = "edit = false; $emit('update')"
+           @keyup.enter = "edit = false; $emit('update')">
+    <button @click = "remove">x</button>
   </li>
 </template>
-<script src="ToDoListItem.js"></script>
-<style lang="scss" src="ToDoList.scss" scoped></style>
+<script src = "./ToDoListItem.js"></script>
+<style lang = "scss" src = "./ToDoListItem.scss" scoped></style>

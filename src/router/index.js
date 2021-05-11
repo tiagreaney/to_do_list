@@ -11,7 +11,7 @@ const routes = [
     component: Home
   },
   {
-    path: '/task-lists/:id',
+    path: '/taskLists/:id',
     name: 'Task List',
     component: () => import('../views/TaskList/TaskList.vue'),
     props: true,

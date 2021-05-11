@@ -1,9 +1,9 @@
-import {getTasklists} from "../../api";
+import {getTaskLists} from "@/api";
 
 export default {
     data() {
         return {
-            taskLists: getTasklists(),
+            taskLists: getTaskLists(),
         }
     },
 }

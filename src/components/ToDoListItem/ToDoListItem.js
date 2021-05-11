@@ -1,19 +1,21 @@
 export default {
-    name: 'TaskListItem',
+    name: 'ToDoListItem',
     props: {
-        data: {
+        task: {
             type: Object,
             required: true,
-            validator(value) {
-                return value.task;
-            }
         },
+    },
+    data() {
+        return {
+            edit: false,
+        }
     },
     methods: {
         remove() {
             this.$emit("remove")
         },
-        addTask(){
+        addTask() {
             this.$emit("addTask")
         }
     }

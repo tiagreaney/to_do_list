@@ -1,19 +1,19 @@
 <template>
-  <div class="holder">
+  <div class = "holder">
     <ul>
-      <draggable v-model="tasks" group="people" @start="drag=true" @end="drag=false">
-        <transition-group name="list">
-          <TaskListItem
-              v-for="(data, index) in tasks"
-              :key='index'
-              :data="data"
-              @remove="remove(index)"
+      <draggable v-model = "tasks" group = "people" @start = "drag=true" @end = "drag = false">
+        <transition-group name = "list">
+          <ToDoListItem
+              v-for = "task in tasks"
+              :key = "task.id"
+              :task = "task"
+              @remove = "remove(task)"
           >
-          </TaskListItem>
+          </ToDoListItem>
         </transition-group>
       </draggable>
     </ul>
   </div>
 </template>
-<script src="ToDoList.js"/>
-<style lang="scss" src="ToDoList.scss" scoped></style>
+<script src = "./ToDoList.js"/>
+<style lang = "scss" src = "./ToDoList.scss" scoped></style>
