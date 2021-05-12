@@ -1,4 +1,3 @@
-import draggable from 'vuedraggable'
 import LabelEdit from 'label-edit'
 import ToDoListItem from '../ToDoListItem/ToDoListItem.vue'
 
@@ -18,7 +17,6 @@ export default {
     },
     components: {
         LabelEdit,
-        draggable,
         ToDoListItem,
     },
     methods: {
