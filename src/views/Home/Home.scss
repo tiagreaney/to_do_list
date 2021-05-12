@@ -1,16 +1,36 @@
-h1{
+h1 {
   padding-top: 100px;
   color: #ffb6c1;
   text-decoration: underline;
 }
-li{
+li {
   list-style: none;
   text-decoration: none;
+  border-radius: 5px;
+  padding: 10px;
 }
-a{
+a {
   color: #3e5252;
 }
 a:link {
   text-decoration: none;
+}
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+ul li {
+  padding: 20px;
+  font-size: 1.3em;
+  background-color: #ffe4e1;
+  border-left: 5px solid #ffb6c1;
+  margin-bottom: 2px;
+  color: white;
+  border-radius: 5px;
+}
+ul li:hover {
+  background-color: #DB7093;
+  color: white;
 }
 

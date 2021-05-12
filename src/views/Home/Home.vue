@@ -1,10 +1,15 @@
 <template>
   <div class="home">
     <h1>To Do Lists</h1>
-    <ul>
-      <li><router-link to="/to_do_list">To Do List 1</router-link></li>
-      <li><router-link to="/toDoList2">To Do List 2</router-link></li>
-    </ul>
+    <nav>
+      <ul>
+        <li v-for="taskList in taskLists" :key="taskList.id">
+          <router-link :to="'/taskLists/'+taskList.id">
+            {{ taskList.name }}
+          </router-link>
+        </li>
+      </ul>
+    </nav>
   </div>
 </template>
 <script src="./Home.js"></script>
