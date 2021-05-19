@@ -2,7 +2,11 @@
   <div>
     <div v-if="taskList">
       <ToDoForm @addTask="addTask"/>
-      <ToDoList :tasks="taskList.tasks" @remove="remove"/>
+      <ToDoList
+          :tasks="taskList.tasks"
+          @remove="remove"
+          @update="update"
+      />
     </div>
     <div v-else-if="showError">
       404

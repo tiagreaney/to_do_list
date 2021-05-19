@@ -1,7 +1,10 @@
+import axios from 'axios';
+const rootUrl = 'http://localhost:8000/api'
+
 const taskLists = [
     {
         id: 1,
-        name: "Yesterday",
+        name: "To Do",
         tasks: [
             { id: 1, name: "Create app structure", edit: false },
             { id: 2, name: "Setup credentials", edit: false }
@@ -9,7 +12,7 @@ const taskLists = [
     },
     {
         id: 2,
-        name: "Today",
+        name: "In Progress",
         tasks: [
             { id: 3, name: "Create Home page", edit: false },
             { id: 4, name: "Create Login page", edit: false },
@@ -19,12 +22,16 @@ const taskLists = [
     },
     {
         id: 3,
-        name: "Tomorrow",
+        name: "Done",
         tasks: [
             { id: 7, name: "Create dashboard page", edit: false },
         ],
     }
 ];
+
+function buildUrl(url) {
+    return rootUrl + url;
+}
 
 export function getTaskLists() {
     return taskLists;
@@ -47,4 +54,28 @@ export function remove(taskListId, task) {
         const index = taskList.tasks.findIndex((t) => t.id == task.id);
         taskList.tasks.splice(index, 1)
     }
+}
+
+export function fetchTaskLists() {
+    return axios.get(buildUrl('/tasklists'));
+}
+
+export function createTaskList(taskList) {
+    return axios.post(buildUrl('/tasklists'), taskList);
+}
+
+export function fetchTaskList(taskListId) {
+    return axios.get(buildUrl('/tasklists/' + taskListId));
+}
+
+export function createTask(taskListId, task) {
+    return axios.post(buildUrl('/tasklists/' + taskListId + '/tasks'), task);
+}
+
+export function editTask(taskListId, task) {
+    return axios.put(buildUrl('/tasklists/' + taskListId + '/tasks/' + task.id), task);
+}
+
+export function deleteTask(taskListId, taskId) {
+    return axios.delete(buildUrl('/tasklists/' + taskListId + '/tasks/' + taskId));
 }

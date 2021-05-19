@@ -1,6 +1,4 @@
-import {getTaskListById} from "@/api";
-import {addTask} from "@/api";
-import {remove} from "@/api";
+import {fetchTaskList, createTask, deleteTask, editTask} from '../../api';
 import ToDoList from '../../components/ToDoList/ToDoList.vue'
 import ToDoForm from "../../components/ToDoForm/ToDoForm.vue";
 import ToDoListItem from "@/components/ToDoListItem/ToDoListItem";
@@ -23,25 +21,32 @@ export default {
            showError: false,
        }
     },
-    created() {
-        this.fetchData();
+    async created() {
+        await this.fetchData();
     },
     methods: {
-        addTask(task) {
-            addTask(this.id, task)
-            this.fetchData()
+        async addTask(task) {
+            await createTask(this.id, task);
+            await this.fetchData();
         },
-        fetchData() {
-            const taskList = getTaskListById(this.id);
-            if (taskList) {
-                this.taskList = taskList;
-            } else {
+        async fetchData() {
+            this.showError = null;
+            try {
+                const response = await fetchTaskList(this.id);
+                this.taskList = response.data;
+            } catch (e) {
                 this.showError = true;
+                throw e;
             }
         },
-        remove(task) {
-            remove(this.id, task)
-            this.fetchData()
+        async remove(task) {
+            await deleteTask(this.id, task.id);
+            await this.fetchData();
         },
+
+        async update(task) {
+            await editTask(this.id, task);
+            await this.fetchData();
+        }
     }
 }

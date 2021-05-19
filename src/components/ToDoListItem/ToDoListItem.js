@@ -15,8 +15,13 @@ export default {
         remove() {
             this.$emit("remove")
         },
-        addTask() {
-            this.$emit("addTask")
+        update() {
+            if (!this.edit) {
+                return;
+            }
+            this.edit = false;
+            const { id, name } = this.task;
+            this.$emit('update', { id, name })
         }
     }
 }
