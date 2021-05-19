@@ -1,9 +1,13 @@
-import {getTaskLists} from "@/api";
+import {fetchTaskLists} from "../../api";
 
 export default {
     data() {
         return {
-            taskLists: getTaskLists(),
+            taskLists: [],
         }
+    },
+    async created() {
+        const response = await fetchTaskLists();
+        this.taskLists = response.data;
     },
 }

@@ -3,12 +3,6 @@ import ToDoListItem from '../ToDoListItem/ToDoListItem.vue'
 
 export default {
     name: 'TaskList',
-    data() {
-        return {
-            taskLists: {listId: 1,'name': 'To Do List', entityType: 'taskList', 'edit': false, tasks: [1,2]},
-            checked: false,
-        }
-    },
     props: {
         tasks: {
             type: Array,
@@ -23,8 +17,8 @@ export default {
         remove(task) {
             this.$emit("remove", task)
         },
-        addTask() {
-            this.$emit("addTask")
-        }
+        update(task) {
+            this.$emit("update", task)
+        },
     }
 };
