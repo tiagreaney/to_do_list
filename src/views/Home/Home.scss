@@ -1,7 +1,8 @@
-h1 {
+h2 {
   padding-top: 100px;
   color: #ffb6c1;
   text-decoration: underline;
+  margin-bottom: 0;
 }
 li {
   list-style: none;
@@ -16,12 +17,11 @@ a:link {
   text-decoration: none;
 }
 ul {
-  margin: 0;
   padding: 0;
   list-style-type: none;
 }
 ul li {
-  padding: 20px;
+  padding: 25px;
   font-size: 1.3em;
   background-color: #ffe4e1;
   border-left: 5px solid #ffb6c1;
@@ -33,4 +33,37 @@ ul li:hover {
   background-color: #DB7093;
   color: white;
 }
-
+button {
+  border:none;
+  color: #DB7093;
+  background-color: #ffe4e1;
+  border-radius: 5px;
+  width:10%;
+}
+li button {
+  opacity: 0;
+  background-color:transparent;
+  color: white;
+  border: none;
+  outline: 0 solid transparent;
+}
+li button:hover {
+  opacity: 1;
+}
+input {
+  width: 70%;
+  border: 0;
+  padding: 20px;
+  padding-bottom: 5px;
+  color: #3e5252;
+  border-radius: 5px;
+  margin-bottom: 8px;
+  outline: 0 solid transparent;
+  text-align: center;
+  margin-left: 10%;
+  margin-top: 50px;
+  font-size: 1.3em;
+}
+.taskListList {
+  padding-right: 400px;
+}

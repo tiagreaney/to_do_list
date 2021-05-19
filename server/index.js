@@ -22,6 +22,12 @@ app.get('/api/tasklists', (req, res) => {
   res.json(data.getTaskLists());
 })
 
+app.post('/api/tasklists', (req, res) => {
+  data.addTaskList(req.body);
+  res.status(201);
+  res.send('Successfully created');
+})
+
 app.get('/api/tasklists/:taskListId', (req, res) => {
   const taskList = data.getTaskListById(req.params.taskListId);
   if (!taskList) {
@@ -31,6 +37,12 @@ app.get('/api/tasklists/:taskListId', (req, res) => {
     res.status(200);
     res.json(taskList);
   }
+})
+
+app.delete('/api/tasklists/:taskListId', (req, res) => {
+  data.removeTaskList(req.params.taskListId);
+  res.status(200);
+  res.send('Successfully deleted');
 })
 
 app.post('/api/tasklists/:taskListId/tasks', (req, res) => {
