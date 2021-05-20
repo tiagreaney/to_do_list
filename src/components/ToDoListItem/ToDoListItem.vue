@@ -2,8 +2,8 @@
   <li>
     <div class="container" v-show="!edit">
       <label @dblclick="edit=true"> {{ task.name }}
-        <input type="checkbox" v-model="task.index" :key="task.index">
-        <span class="checkmark"></span>
+        <!--<input type="checkbox" v-model="task.index" :key="task.index">
+        <span class="checkmark"></span>-->
       </label>
     </div>
     <input class="editInput"
