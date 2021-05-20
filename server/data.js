@@ -34,15 +34,6 @@ function getTaskListById(id) {
   return taskLists.find((taskList) => taskList.id == id);
 }
 
-function addTaskList(taskList) {
-  taskLists.push(taskList);
-}
-
-function removeTaskList(taskListId) {
-  const index = taskLists.findIndex((taskList) => taskList.id == taskListId);
-  taskLists.splice(index, 1);
-}
-
 function addTask(taskListId, task) {
   const taskList = getTaskListById(taskListId);
   if (taskList) {
@@ -71,8 +62,6 @@ function updateTask(taskListId, task) {
 module.exports = {
   getTaskLists,
   getTaskListById,
-  addTaskList,
-  removeTaskList,
   addTask,
   removeTask,
   updateTask,
