@@ -56,7 +56,6 @@ export function remove(taskListId, task) {
     }
 }
 
-
 export function fetchTaskLists() {
     return axios.get(buildUrl('/tasklists'));
 }
@@ -67,10 +66,6 @@ export function createTaskList(taskList) {
 
 export function fetchTaskList(taskListId) {
     return axios.get(buildUrl('/tasklists/' + taskListId));
-}
-
-export function deleteTaskList(taskListId) {
-    return axios.delete(buildUrl('/tasklists/' + taskListId));
 }
 
 export function createTask(taskListId, task) {

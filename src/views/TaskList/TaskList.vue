@@ -1,7 +1,6 @@
 <template>
   <div>
     <div v-if="taskList">
-      <h2>{{ taskList.name }}</h2>
       <ToDoForm @addTask="addTask"/>
       <ToDoList
           :tasks="taskList.tasks"
